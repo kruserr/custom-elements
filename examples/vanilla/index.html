@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="width: 100vw; min-height: 100vw; overflow-x: hidden; overflow-y: scroll; background-color: black; color: white">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,16 +12,13 @@
       }
       main();
     </script>
-    <style>
-      /* This will only affect the paragraph outside the Web Components. */
-      p { color: blue; }
-    </style>
 	</head>
   <body>
-    <p>This text should be blue, because it's not affected by the encapsulated style. (The counts should be green!)</p>
-    <ce-vanilla></ce-vanilla>
-    <ce-vanilla name="Alice"></ce-vanilla>
-    <ce-vanilla name="Bob"></ce-vanilla>
-    <ce-vanilla name="Charlie"></ce-vanilla>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <ce-vanilla></ce-vanilla>
+      <ce-vanilla name="Alice"></ce-vanilla>
+      <ce-vanilla name="Bob"></ce-vanilla>
+      <ce-vanilla name="Charlie"></ce-vanilla>
+    </div>
   </body>
 </html>

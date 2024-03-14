@@ -61,14 +61,16 @@ pub trait CustomElement: Default + 'static {
     /// Per the [Web Components spec](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance),
     /// this is deferred to the first invocation of `connectedCallback()`.
     /// It will run before [connected_callback](CustomElement::connected_callback).
-    fn inject_children(&mut self, this: &HtmlElement);
+    fn inject_children(&mut self, this: &HtmlElement) {}
+
+    fn render(&mut self, this: &HtmlElement);
 
     /// Whether a [Shadow root](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
     /// should be attached to the element or not. Shadow DOM encapsulates styles, but makes some DOM manipulation more difficult.
     ///
-    /// Defaults to `true`.
+    /// Defaults to `false`.
     fn shadow() -> bool {
-        true
+        false
     }
 
     /// The names of the attributes whose changes should be observed. If an attribute name is in this list,
